@@ -19,6 +19,9 @@ fun main() {
 
     if(loanDuration < 0) {
         loanDuration = 1
+        val report = Loan(bookTitle, borrower, loanDuration)
+        println("Report saved! Borrower's name: ${report.borrower}, Book title: ${report.bookTitle}, Loan duration: $loanDuration Day")
+        println("Final Total loan: ${report.calculateFine()}")
     } else {
         val report = Loan(bookTitle, borrower, loanDuration)
         println("Report saved! Borrower's name: ${report.borrower}, Book title: ${report.bookTitle}, Loan duration: $loanDuration Day")
