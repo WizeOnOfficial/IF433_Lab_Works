@@ -10,7 +10,7 @@ class Student (val name: String, val nim: String, var major: String, var gpa: Do
         }
     }
 
-    constructor(name: String, nim: String, gpa: Double): this(name, nim, major = "Non-Matriculated", gpa) {
+    constructor(name: String, nim: String): this(name, nim, major = "Non-Matriculated") {
         println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
     }
 }
