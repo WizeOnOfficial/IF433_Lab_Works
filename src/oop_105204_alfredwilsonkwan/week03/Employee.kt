@@ -1,5 +1,16 @@
 package oop_105204_alfredwilsonkwan.week03
 
+private var performanceRating: Int = 3
+
+fun increasePerformance() {
+    performanceRating++
+    println("Kinerja $name meningkat! Rating: $performanceRating")
+}
+
+fun printStatus() {
+    println("Karyawan: $name, Rating: $performanceRating")
+}
+
 class Employee (val name: String) {
     var salary: Int = 0
         set(value) {
