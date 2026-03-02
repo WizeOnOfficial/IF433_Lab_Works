@@ -1,4 +1,4 @@
-package oop_105204_alfredwilsonkwan.week04
+package oop_105204_alfredwilsonkwan.week05
 
 class EWallet(var balance: Double, accountName: String) : PaymentMethod(accountName) {
     override fun processPayment(amount: Double) {
