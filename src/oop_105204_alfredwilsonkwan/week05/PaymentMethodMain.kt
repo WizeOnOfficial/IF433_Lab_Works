@@ -9,6 +9,15 @@ fun main() {
     val walletList: List<PaymentMethod> = listOf(ovo, bca)
 
     for (wallet in walletList) {
-        wallet.processPayment(75000.0)
+        when (wallet) {
+            is EWallet -> {
+                wallet.topUp(50000.0)
+                wallet.processPayment(75000.0)
+            }
+
+            is CreditCard -> {
+                wallet.processPayment(75000.0)
+            }
+        }
     }
 }
