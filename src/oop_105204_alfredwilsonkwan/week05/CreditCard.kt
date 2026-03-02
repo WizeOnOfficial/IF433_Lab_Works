@@ -4,6 +4,7 @@ class CreditCard(val limit: Double, var usedAmount: Double = 0.0, accountName: S
     override fun processPayment(amount: Double) {
         if (usedAmount + amount < limit) {
             usedAmount += amount
+            println("Updated Used Amount: $usedAmount")
         } else {
             println("Amount over limit, transaction failed.")
         }
