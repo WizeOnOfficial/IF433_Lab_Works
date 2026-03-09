@@ -8,9 +8,14 @@ class SmartHomeHub {
 
     fun turnOffAllSwitches() {
         for (d in devices) {
-            if (d is Switchable) {
-                d.turnOff()
-            }
+            if (d is Switchable) { d.turnOff() }
+        }
+    }
+
+    fun activateSecurityMode() {
+        for (d in devices) {
+            if (d is Recordable) { d.startRecord() }
+            if (d is SmartSpeaker) { d.playMusic("Sirine Peringatan") }
         }
     }
 
