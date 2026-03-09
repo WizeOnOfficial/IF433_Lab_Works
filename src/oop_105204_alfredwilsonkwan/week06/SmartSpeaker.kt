@@ -3,11 +3,11 @@ package oop_105204_alfredwilsonkwan.week06
 class SmartSpeaker(override val id: String, override val name: String) : SmartDevice, Switchable {
 
     override fun turnOn() {
-        println("The $name has been turned on!")
+        println("The Speaker '$name' has been turned on!")
     }
 
     override fun turnOff() {
-        println("The $name has been turned off!")
+        println("The Speaker '$name' has been turned off!")
     }
 
     fun playMusic(song: String) {
