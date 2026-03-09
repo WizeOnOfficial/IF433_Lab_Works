@@ -1,16 +1,17 @@
 package oop_105204_alfredwilsonkwan.week06
 
-class SmartSpeaker(override val id: String, override val name: String) : SmartDevice, Switchable {
+class SmartCCTV(override val id: String, override val name: String) : SmartDevice, Switchable, Recordable {
 
     override fun turnOn() {
         println("The $name has been turned on!")
+        startRecord()
     }
 
     override fun turnOff() {
         println("The $name has been turned off!")
     }
 
-    fun playMusic(song: String) {
-        println("Memutar lagu $song dari Spotify.")
+    override fun startRecord() {
+        println("This device is now recording!")
     }
 }
