@@ -18,5 +18,10 @@ class SmartHomeHub {
             if (d is SmartSpeaker) { d.playMusic("Sirine Peringatan") }
         }
     }
+}
 
+fun main() {
+    val myLamp = SmartLamp("L01", "Ruang Tamu")
+    val mySpeaker = SmartSpeaker("S01", "Google Nest Dapur")
+    val myCCTV = SmartCCTV("C01", "Ezviv Garasi")
 }
