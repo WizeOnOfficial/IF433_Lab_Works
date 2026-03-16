@@ -10,4 +10,14 @@ fun main() {
     println("\n=== FORGE CHECK ===")
     val mySword = Weapon.forgeStarterSword()
     println(mySword.item)
+
+    println("\n=== UPGRADE SWORD ===")
+    val upgradeSword = mySword.item.copy(damage = 25)
+
+    println("\n=== SIMULASI EVENT ===")
+    processEvent(SafeZone)
+    processEvent(MonsterEncounter("Goblin Nakal"))
+    processEvent(LootDropped(upgradeSword))
+    processEvent(GameOver("Terkena jebakan racun"))
+
 }

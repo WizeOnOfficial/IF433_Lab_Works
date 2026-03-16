@@ -4,7 +4,7 @@ fun processEvent(event: BattleState) {
     when(event) {
         is MonsterEncounter -> println("Monster ${event.monsterName} menghalangi jalan!")
         is LootDropped -> println("Kamu menang! Monster menjatuhkan suatu loot! Kamu dapat ${event.item.name}, damage: ${event.item.damage}, rarity: ${event.item.rarity}")
-        is GameOver -> println("Game Over! Kamu kalah.")
+        is GameOver -> println("Game Over! Kamu kalah, karena ${event.reason}")
         SafeZone -> println("Kamu berada di suatu safe zone!")
     }
 }
