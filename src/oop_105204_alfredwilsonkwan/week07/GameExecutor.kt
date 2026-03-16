@@ -8,6 +8,3 @@ fun processEvent(event: BattleState) {
         SafeZone -> println("Kamu berada di suatu safe zone!")
     }
 }
-
-class GameExecutor {
-}
