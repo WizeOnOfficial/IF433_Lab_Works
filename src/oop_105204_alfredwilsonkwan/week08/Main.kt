@@ -1,4 +1,18 @@
 package oop_105204_alfredwilsonkwan.week08
+fun main() {
+    println("=== TEST SAFE CALL & ELVIS ===")
+    val emptyOrder = Order(null, null)
 
-class Main {
+    val destination = emptyOrder.deliveryDetails?.address?.city?.name ?: "Kota tidak diketemui"
+    println("Tujuan pengiriman: $destination")
+
+     println("\n=== TEST LET BLOCK ===")
+    val validOrder = Order(null, 250000)
+
+    val receipt = validOrder.totalPrice?.let { price ->
+        val tax = price * 0.11
+        "Transaksi Valid. Harga: Rp$price, Pajak: Rp$tax"
+    } ?: "Transaksi Invalid: Harga belum di-set!"
+
+    println(receipt)
 }
