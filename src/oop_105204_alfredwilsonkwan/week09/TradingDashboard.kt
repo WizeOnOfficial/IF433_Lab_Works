@@ -29,5 +29,9 @@ fun main() {
     println("Unique pairs: $uniquePairs")
 
     println("\n=== CRYPTO TRADING DASHBOARD ===")
+    println("Best Performing Cryptos:")
     topPerformersString.forEach { println(it) }
+
+    println("\nWorst Performing Cryptos:")
+    worstPerformersString.forEach { println(it) }
 }
