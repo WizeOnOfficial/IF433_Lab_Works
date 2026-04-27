@@ -26,4 +26,10 @@ fun main() {
     txRepo.add(log1)
     txRepo.add(log2)
     txRepo.add(log3)
+
+    val logResponse = ApiResponse("200 OK", txRepo.getAll())
+
+    logResponse.data.forEach {
+        println("Log: ID - ${it.id}, Spent - ${it.amount}")
+    }
 }
