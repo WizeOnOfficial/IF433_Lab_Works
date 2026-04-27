@@ -10,4 +10,8 @@ class WalletRepository<T> () {
     fun getAll(): List<T> {
         return items
     }
+
+    fun <T: Any> search(item: T): String{
+        return "Searched item $item"
+    }
 }
