@@ -35,4 +35,8 @@ fun main() {
         println("\n=== Hasil Pencarian Kamera ===")
         println(it.diagnose())
     }
+
+    with(homeDevices) {
+        println("\nTotal Produk : ${this.size}")
+    }
 }
