@@ -5,23 +5,27 @@ import oop_105204_alfredwilsonkwan.week06.SmartLamp
 fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
-    val smartLamp = SmartDevice(
-        name = "Philips WiZ Living Room",
-        category = "Lighting",
-        isOnline = true,
+    SmartDevice(name = "Philips WiZ Living Room", category = "Lighting").apply {
+        isOnline = true
         powerLoad = 12
-    ).apply {
-
     }.also {
         homeDevices.add(it)
         println("Menambahkan Smart Lamp: $it")
     }
 
-    val outdoorCam = SmartDevice("Ezviz Outdoor", "Camera").apply {
+    SmartDevice("Ezviz Outdoor", "Camera").apply {
         isOnline = true
         powerLoad = 5
     }.also {
         println("(LOG) Kamera terhubung.")
         homeDevices.add(it)
     }
+
+    val acInverter = run {
+        SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
+    }
+
+    homeDevices.add(acInverter)
+    homeDevices.add(SmartDevice("Picolo's Auto Feeder","Pet Care", true, 10))
+
 }
