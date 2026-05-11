@@ -21,6 +21,7 @@ fun main() {
     var currentKibbleStock = 50
 
     try {
+        println("Jadwal Makan 1:")
         dispenseKibble(80, currentKibbleStock, false)
     } catch (e: DispenserJamException) {
         println("Error: ${e.message}")
@@ -28,5 +29,7 @@ fun main() {
         println("Error: ${e.message}")
     } catch (e: Exception) {
         println("Error Umum, Terjadi kesalahan tidak terduga.")
+    } finally {
+        println("Siklus pengecekan dispenser pagi selesai.")
     }
 }
