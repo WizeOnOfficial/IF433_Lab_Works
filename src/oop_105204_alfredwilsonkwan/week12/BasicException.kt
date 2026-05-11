@@ -1,5 +1,7 @@
 package oop_105204_alfredwilsonkwan.week12
 
+import java.text.NumberFormat
+
 fun divide(a: Int, b: Int): Int {
     try {
         return a / b
@@ -9,4 +11,17 @@ fun divide(a: Int, b: Int): Int {
     } finally {
         println("Division attempt finished")
     }
+}
+
+fun main() {
+    println("=== TEST TRY AS EXPRESSION ===")
+    val inputString = "123A"
+
+    val result: Int = try {
+        Integer.parseInt(inputString)
+    } catch (e: NumberFormatException) {
+        -1
+    }
+
+    println("Hasil parsing: $result")
 }
