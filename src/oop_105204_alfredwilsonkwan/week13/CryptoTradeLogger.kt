@@ -11,10 +11,10 @@ fun fromCsvTrade(line: String): TradeRecord? {
     try {
         return TradeRecord(parts[0].toInt(), parts[1], parts[2], parts[3].toDouble(), parts[4].toDouble()) ?: null
     } catch (e: NumberFormatException) {
-        println("(Log) Dat korup diabaikan: $line")
+        println("(Log) Data korup diabaikan: $line")
         return null
     } catch (e: IndexOutOfBoundsException) {
-        println("(Log) Dat korup diabaikan: $line")
+        println("(Log) Data korup diabaikan: $line")
         return null
     }
 }
@@ -44,4 +44,7 @@ fun main() {
     saveTrades(trades, "crypto_trades.csv")
 
     File("crypto_trades.csv").appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+
+    val loadedData = loadTrades("crypto_trades.csv")
+    loadedData.sumOf {it.pnl}
 }
